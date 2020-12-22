@@ -1,0 +1,33 @@
+html,body,.container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header{
+      width: 100%;
+  }
+
+
+  body,button,form,ul,p,h1,h2,h3,h4,h5,h6,.start_button {
+      font-family: 'Open Sans', sans-serif;
+  } 
+
+  form {
+     font-size: 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font: white;
+    font-size: 18px;
+  }
+  li {
+    font: white;
+  }
+
+
+  .start_button {
+      font-weight: bold;
+      color: gray;
+  }

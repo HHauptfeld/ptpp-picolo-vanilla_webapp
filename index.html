@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PTPP</title>
+  <script src="ptpp.js"></script>
+  <link rel="stylesheet" href="ptpp.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="background-color: gray;">
+
+
+  <div class="header start row justify-content-center text-center" style="background-color: #FF474A;">
+    <div class="col">
+      <h1 style="color:white; font-family: 'Open Sans', sans-serif;"><b>&#928&#920&#928&#928</b></h1>
+      <h3 style="color:white; font-family: 'Open Sans', sans-serif;"><b>picolo for frisbee kids</b></h3>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="content row justify-content-center text-center">
+
+    <div class="col">
+      <form class="start">
+        <div class="form-group">
+          <label style="color:white; font-family: 'Open Sans', sans-serif;">Add a player to the game:</label>
+          <input type="text" id="playerName">
+        </div>
+      </form>
+
+
+      <button type="button" class="start btn btn-secondary start_button" onclick="addPlayerName()"><b>Add
+          Player</b></button>
+
+      <br>
+
+
+      <ul id="players-list" class="start"></ul>
+
+      <br><br><br><br><br>
+
+      <p style="display: inline;" id="playername"></p>
+      <p style="display: inline;" id="rule"></p>
+
+      <button type="button" class="start btn btn-secondary start_button" onclick="startGame()"><b>Start
+          Game</b></button>
+      <br>
+
+      <button type="button" class="btn btn-secondary" onclick="getRule()" style="visibility: hidden; margin-top: 100px;"
+        id="get_rule">Get a New Rule</button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -39,12 +39,9 @@
         <div class="form-group">
           <label style="color:white; font-family: 'Open Sans', sans-serif;">Add a player to the game:</label>
           <input type="text" id="playerName">
+          <button type="button" class="start btn btn-secondary start_button" onclick="addPlayerName()"><b>+</b></button>
         </div>
       </form>
-
-
-      <button type="button" class="start btn btn-secondary start_button" onclick="addPlayerName()"><b>Add
-          Player</b></button>
 
       <br>
 
@@ -53,6 +50,8 @@
 
       <br><br><br><br><br>
 
+      <p style="display: inline;" id="virus"></p>
+      <br>
       <p style="display: inline;" id="playername"></p>
       <p style="display: inline;" id="rule"></p>
 

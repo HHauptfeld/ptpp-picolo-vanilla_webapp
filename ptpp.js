@@ -9,28 +9,46 @@ function getRandomPlayer() {
 const ruleDeck = [
     {
         "nameRule": false,
-        "RuleString": "Take 3 sips if you say someone elses name"
+        "virusRule": false,
+        "RuleString": "Play never have I ever starting with 3 fingers up"
     },
     {
         "nameRule": false,
+        "virusRule": false,
         "RuleString": "Take a sip if you are wearing blue"
     },
     {
         "nameRule": false,
+        "virusRule": false,
         "RuleString": "Reverse buffalo is in effect"
     },
     {
         "nameRule": false,
-        "RuleString": "Switch shirts with the person to your left"
+        "virusRule": false,
+        "RuleString": "Play never have I ever starting with 3 fingers up"
     },
     {
         "nameRule": true,
+        "virusRule": false,
         "RuleString": ", kill your drink"
+    },
+    {
+        "nameRule": true,
+        "virusRule": false,
+        "RuleString": ", pack a bowl"
+    },
+    {
+        "nameRule": true,
+        "virusRule": false,
+        "RuleString": ", drink with two hands until your name is mentioned in a rule again"
+    },
+    {
+        "nameRule": true,
+        "virusRule": false,
+        "RuleString": ", you're the question master. Anytime you ask someone a question and they respond, they have to drink one."
     }
-];
 
-const MIN_SIP = 2
-const MAX_SIP = 6
+];
 
 //This function deletes a list element selected
 function removePlayer(elem) {
@@ -70,15 +88,15 @@ function getRule() {
     var rule = ruleDeck[Math.floor(Math.random() * ruleDeck.length)];
 
     if (rule.nameRule == true) {
-        document.getElementById("playername").innerHTML = "<span style='color: gray; font-size: 50px'>" + getRandomPlayer() + "</span>";
+        document.getElementById("playername").innerHTML = "<span style='color: #696969; font-size: 50px'>" + getRandomPlayer() + "</span>";
     } else {
         document.getElementById('playername').innerHTML = ''
     }
 
 
-    document.getElementById("rule").innerHTML = "<span style='color: gray; font-size: 50px'>" + rule.RuleString + "</span>";
+    document.getElementById("rule").innerHTML = "<span style='color: #696969; font-size: 50px'>" + rule.RuleString + "</span>";
 
-    document.body.style.backgroundColor = getColor()
+    document.body.style.backgroundColor = getGoodLookingColor()
 }
 
 function startGame() {
@@ -91,6 +109,10 @@ function startGame() {
             divsToHide[i].style.display = "none";
         }
         document.getElementById("get_rule").style.visibility = "visible"
+
+        /* this is all logic for a color gradient animation that I thought would be a good idea but actually makes it hard to read the rules
+
+        //does a color animation whenever a the game is started, super trippy and definitely not needed but hey I like to experiment w animations and colors
         document.body.style.transition = "background 3s";
 
         const randomColor = () => getColor()
@@ -100,35 +122,27 @@ function startGame() {
             changeColor()
         }, 1000)
 
-        // start color animation as soon as document is ready
         document.onreadystatechange = () => {
             if (document.readyState === 'complete') {
                 changeColor()
             }
         }
+        */
     }
 
 }
 
-
+/*selects random color from a range of shades derived from #FF474A taken from color.adobe.com*/
 function getColor() {
-    return "hsl(" + 360 * Math.random() + ',' +
-        (25 + 70 * Math.random()) + '%,' +
-        (85 + 10 * Math.random()) + '%)'
+    shadeArray = ["#FF474A", "#FF5C5F", "#FF3336", "#FF7073", "#FF1F22", "#FF8587", "#FF0A0E", "#FF999B", "#FF0004", "#FFADAF"]
+    return shadeArray[Math.floor(Math.random() * shadeArray.length)];
 }
 
+/*Gets a random color that looks nice and also makes it easy to read gray text
+  but also please feel free to change these colors bc idk if they actually look good with gray text lmao
+*/
 
-
-const list = document.getElementById('todo-list')
-
-
-//This function deletes a list element selected
-function deleteToDo(elem) {
-
-    list.removeChild(elem);
-
+function getGoodLookingColor() {
+    colorArray = ["#FF474A", "#FFE6A7", "#8C2B76", "#F487B6", "#FDE12D", "#6A8E7F", "#CD8B76", "#76B041", "#F0B67F", "#E1F2FE"]
+    return colorArray[Math.floor(Math.random() * colorArray.length)];
 }
-
-
-
-
